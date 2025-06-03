@@ -1,31 +1,1025 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>توجيه سريع</title>
-    <script>
-        // كود التوجيه الفائق السرعة
-        (function() {
-            const ua = navigator.userAgent.toLowerCase();
-            
-            if (/android/.test(ua)) {
-                window.location.replace("https://www.google.com");
-                return;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسرار الحب - دليل العلاقات الرومانسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'El Messiri', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        :root {
+            --primary: #ff6b8b;
+            --primary-light: #ffd6de;
+            --primary-dark: #e8436d;
+            --secondary: #ffb8c6;
+            --accent: #ff8fab;
+            --text: #5a3a4a;
+            --light-bg: #fff5f7;
+            --card-bg: #ffffff;
+            --shadow: rgba(255, 107, 139, 0.2);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffecef 100%);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 15px;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="rgba(255,107,139,0.05)" stroke-width="2"/></svg>');
+            background-size: 150px 150px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 25px 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            box-shadow: 0 10px 30px rgba(255, 107, 139, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M20,50 Q50,20 80,50 T110,50" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/></svg>');
+            background-size: 100px 100px;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            animation: pulse 3s infinite;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .logo-icon i {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        .search-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary-light);
+        }
+        
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 5px;
+            font-size: 1.1rem;
+            background: transparent;
+            color: var(--text);
+            outline: none;
+        }
+        
+        .search-box button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(255, 107, 139, 0.3);
+        }
+        
+        .search-box button:hover {
+            transform: scale(1.05) rotate(5deg);
+            background: var(--primary-dark);
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.4);
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+        }
+        
+        /* FAQ Container */
+        .faq-container {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .question-box {
+            background: var(--card-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px var(--shadow);
+            border: 1px solid #ffd6de;
+            position: relative;
+        }
+        
+        .question-box:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .question-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: white;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .question-header:hover {
+            background: #fff9fb;
+        }
+        
+        .question-header h3 {
+            flex: 1;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-right: 15px;
+            line-height: 1.5;
+            color: var(--primary-dark);
+        }
+        
+        .question-number {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 10px;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(255, 107, 139, 0.3);
+        }
+        
+        .toggle-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Answer Section */
+        .answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease;
+            background: var(--light-bg);
+        }
+        
+        .answer.show {
+            padding: 20px;
+            max-height: 1500px;
+        }
+        
+        .solution-type {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 20px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .solution-type:last-child {
+            margin-bottom: 0;
+        }
+        
+        .solution-type h4 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+        
+        .solution-type h4 i {
+            margin-left: 10px;
+            background: var(--primary-light);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+        }
+        
+        .solution-type p {
+            color: var(--text);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        /* Visit Section */
+        .visit-section {
+            background: linear-gradient(135deg, #fff9fb 0%, #fff0f3 100%);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 4px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visit-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--accent);
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .visit-title i {
+            margin-left: 10px;
+            color: var(--secondary);
+        }
+        
+        .visit-links {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .visit-link {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            border: 1px solid #ffd6de;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .visit-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 143, 171, 0.15);
+            border-color: #ffb8c6;
+        }
+        
+        .visit-link h5 {
+            color: var(--accent);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .visit-link h5 i {
+            margin-left: 8px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        .visit-link p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            flex-grow: 1;
+        }
+        
+        .visit-link .link-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .visit-link:hover .link-btn {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px 20px;
+            color: #7b7b9d;
+            font-size: 1rem;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(255, 107, 139, 0.3);
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 8px 15px rgba(255, 107, 139, 0.4);
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Floating elements */
+        .floating-element {
+            position: fixed;
+            z-index: -1;
+            color: rgba(255, 107, 139, 0.15);
+            font-size: 24px;
+            animation: float 18s infinite linear;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 576px) {
+            .header {
+                padding: 20px 15px;
+                border-radius: 20px;
             }
             
-            if (/ipad|iphone|ipod/.test(ua)) {
-                window.location.replace("https://www.facebook.com");
-                return;
+            h1 {
+                font-size: 1.8rem;
             }
             
-            window.location.replace("https://www.youtube.com");
-        })();
-    </script>
+            .logo-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- لا يوجد محتوى مرئي -->
-    <noscript>
-        <meta http-equiv="refresh" content="0;url=https://www.youtube.com">
-    </noscript>
+    <!-- Floating elements decoration -->
+    <div class="floating-element" style="top: 5%; left: 10%; animation-delay: 0s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element" style="top: 15%; left: 85%; animation-delay: 2s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element" style="top: 25%; left: 25%; animation-delay: 4s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element" style="top: 40%; left: 75%; animation-delay: 6s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element" style="top: 60%; left: 15%; animation-delay: 8s;"><i class="fas fa-heart"></i></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h1>العلاقات الناجحة</h1>
+                </div>
+                <p class="subtitle">دليلك  لعلاقات أكثر عمقاً وسعادة </p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="ابحث عن سؤال يهمك...">
+                        <button id="searchButton"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Call to Action Button -->
+                <a href="#" class="btn">ابدأ رحلتك الرومانسية</a>
+            </div>
+        </div>
+        
+        <!-- FAQ Container -->
+        <div class="faq-container" id="faqContainer">
+            <!-- Question 1 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(1)">
+                    <h3>كيف أعبر عن حبي بطريقة مميزة؟</h3>
+                    <div class="question-number">1</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer1">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-lightbulb"></i> أفكار إبداعية</h4>
+                        <p>1. اكتب رسالة حب بخط اليد وضعها تحت وسادته<br>
+                        2. أعد له/لها وجبته المفضلة بشكل مفاجئ<br>
+                        3. خطط لموعد رومانسي تحت النجوم<br>
+                        4. أنشئ قائمة أغاني خاصة بعلاقتكما</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-gem"></i> نصائح الخبراء</h4>
+                        <p>التعبير عن الحب لا يحتاج لمناسبات كبيرة، بل التفاصيل الصغيرة الدائمة. ركز على لغة الحب التي يفضلها شريكك (الكلمات، اللمس، الوقت المشترك، الخدمات، الهدايا).</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-lightbulb"></i> أفكار رومانسية</h5>
+                                <p>مجموعة من الأفكار المبتكرة للتعبير عن الحب</p>
+                                <span class="link-btn">استكشف الأفكار</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-book"></i> دليل لغات الحب</h5>
+                                <p>تعرف على لغات الحب الخمس وكيفية استخدامها</p>
+                                <span class="link-btn">اكتشف المزيد</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(2)">
+                    <h3>كيف نحافظ على الشغب في العلاقة؟</h3>
+                    <div class="question-number">2</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer2">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-magic"></i> أسرار الشغب</h4>
+                        <p>1. خصصا وقتاً أسبوعياً لموعد رومانسي<br>
+                        2. جربا أنشطة جديدة معاً<br>
+                        3. احتفلا بالمناسبات الصغيرة<br>
+                        4. حافظا على المفاجآت بين الحين والآخر</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-heartbeat"></i> نصائح نفسية</h4>
+                        <p>الشغب يتطلب استثماراً مستمراً. تقبل أن العلاقات تمر بمراحل مختلفة، وركز على بناء الصداقة العميقة مع شريكك كأساس للشغب الدائم.</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-calendar-alt"></i> تحديات رومانسية</h5>
+                                <p>تحديات شهرية لإحياء الشغب في علاقتك</p>
+                                <span class="link-btn">جرب التحدي</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-video"></i> ورش عمل</h5>
+                                <p>جلسات تفاعلية لتعزيز العلاقات</p>
+                                <span class="link-btn">اشترك الآن</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(3)">
+                    <h3>كيف نتعامل مع الخلافات الزوجية؟</h3>
+                    <div class="question-number">3</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer3">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-handshake"></i> فن الحوار</h4>
+                        <p>1. استمع بإنصات دون مقاطعة<br>
+                        2. عبر عن مشاعرك باستخدام "أنا" بدلاً من "أنت"<br>
+                        3. تجنب اللوم والنقد الجارح<br>
+                        4. ابحث عن أرضية مشتركة</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-balance-scale"></i> حلول عملية</h4>
+                        <p>1. خصصا وقتاً للهدوء قبل النقاش<br>
+                        2. حددا المشكلة الحقيقية وليس الأعراض<br>
+                        3. ابحثا عن حلول وسط<br>
+                        4. تعاملا مع الخلاف كفريق وليس كخصوم</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-book-open"></i> دليل الحوار الزوجي</h5>
+                                <p>تعلم فنون التواصل الفعال في العلاقات</p>
+                                <span class="link-btn">اقرأ الدليل</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-headset"></i> استشارات أسرية</h5>
+                                <p>جلسات استشارية مع مختصين علاقات</p>
+                                <span class="link-btn">احجز جلسة</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(4)">
+                    <h3>كيف نعيد الثقة بعد الخيانة؟</h3>
+                    <div class="question-number">4</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer4">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-heart-crack"></i> مراحل التعافي</h4>
+                        <p>1. الاعتراف بالمشاعر والألم<br>
+                        2. الصدق والشفافية الكاملة<br>
+                        3. تحديد أسباب المشكلة<br>
+                        4. وضع حدود وضوابط جديدة</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-seedling"></i> إعادة البناء</h4>
+                        <p>1. الصبر على عملية الشفاء التي تحتاج وقتاً<br>
+                        2. الاستعانة بمستشار علاقات إذا لزم الأمر<br>
+                        3. التركيز على الحاضر والمستقبل<br>
+                        4. تقييم العلاقة بموضوعية</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-road"></i> رحلة التعافي</h5>
+                                <p>دليل عملي لإعادة بناء الثقة بعد الخيانة</p>
+                                <span class="link-btn">ابدأ الرحلة</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-users"></i> مجموعات دعم</h5>
+                                <p>مجتمعات دعم لأولئك الذين مروا بتجارب مشابهة</p>
+                                <span class="link-btn">انضم الآن</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(5)">
+                    <h3>ليه كل ما أرتبط، العلاقة تفشل بعد فترة؟</h3>
+                    <div class="question-number">5</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer5">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-brain"></i> الحل النفسي</h4>
+                        <p>قد يكون السبب تكرار نفس "النمط العاطفي" من غير وعي (مثلاً: التعلق السريع، اجتذاب شخصيات غير متاحة عاطفياً).</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-tasks"></i> الحل السلوكي</h4>
+                        <p>1. راقب بدايات علاقاتك السابقة: هل في تشابه في التصرفات أو نوعية الشريك؟<br>
+                        2. جرّب التمهّل والتعرف بعمق قبل التورط عاطفيًا.</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-book"></i> دليل الأنماط العاطفية</h5>
+                                <p>تعرف على أنماط التعلق وكيف تؤثر على علاقاتك</p>
+                                <span class="link-btn">اقرأ المزيد</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-chart-line"></i> اختبار الأنماط</h5>
+                                <p>اكتشف نمط التعلق الخاص بك</p>
+                                <span class="link-btn">ابدأ الاختبار</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(6)">
+                    <h3>هو بطل يهتم بيا زي الأول، دا طبيعي؟</h3>
+                    <div class="question-number">6</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer6">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-brain"></i> الحل النفسي</h4>
+                        <p>هذا شائع، لأن الاندفاع العاطفي يقل بعد فترة، ودا لا يعني انتهاء الحب، بل دخول العلاقة في مرحلة أعمق.</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-tasks"></i> الحل السلوكي</h4>
+                        <p>1. بدلاً من انتظار المبادرة، جرّب أنت كمان تبدأ بلحظات اهتمام بسيطة.<br>
+                        2. ناقش احتياجاتك بصراحة بدون لوم أو مقارنة.</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-book-open"></i> مراحل العلاقات</h5>
+                                <p>فهم التغيرات الطبيعية في العلاقات العاطفية</p>
+                                <span class="link-btn">تعلم المزيد</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-comments"></i> فن الحوار العاطفي</h5>
+                                <p>كيف تناقش احتياجاتك العاطفية بفعالية</p>
+                                <span class="link-btn">استكشف الدليل</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 7 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(7)">
+                    <h3>مش قادرة أنسى الشخص اللي سابني، أعمل إيه؟</h3>
+                    <div class="question-number">7</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer7">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-brain"></i> الحل النفسي</h4>
+                        <p>الألم بعد الانفصال طبيعي، لكنه يتضخم إذا كان فيه تعلق غير آمن أو صورة مثالية للطرف الآخر.</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-tasks"></i> الحل السلوكي</h4>
+                        <p>1. ابدأ بإخراج الشخص من روتينك اليومي (وسائل التواصل، الذكريات).<br>
+                        2. حوّل تركيزك لنفسك: اهتم بجسمك، أهدافك، علاقاتك الاجتماعية.</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-heart-broken"></i> دليل التعافي من الانفصال</h5>
+                                <p>خطوات عملية لتجاوز الألم العاطفي</p>
+                                <span class="link-btn">ابدأ التعافي</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-spa"></i> رعاية الذات</h5>
+                                <p>تمارين وأفكار للاهتمام بنفسك بعد الانفصال</p>
+                                <span class="link-btn">اكتشف الأفكار</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 8 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(8)">
+                    <h3>أنا بحبه، بس دايمًا في مشاكل. أكمل ولا أمشي؟</h3>
+                    <div class="question-number">8</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer8">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-brain"></i> الحل النفسي</h4>
+                        <p>الحب لوحده مش كفاية، لازم يكون في أمان عاطفي وتواصل صحي.</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-tasks"></i> الحل السلوكي</h4>
+                        <p>1. اسأل نفسك: هل المشاكل قابلة للحل؟ هل فيه احترام متبادل؟<br>
+                        2. جرّب فترة هدنة مع مراقبة مشاعرك، وإذا استمر الضغط، الاستمرار قد يضر أكثر مما ينفع.</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-question-circle"></i> اختبار العلاقة</h5>
+                                <p>اكتشف إذا كانت علاقتك صحية وتستحق الاستمرار</p>
+                                <span class="link-btn">ابدأ الاختبار</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-scroll"></i> دليل العلاقات الصحية</h5>
+                                <p>معايير العلاقة الناجحة</p>
+                                <span class="link-btn">اقرأ الدليل</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 9 -->
+            <div class="question-box">
+                <div class="question-header" onclick="toggleAnswer(9)">
+                    <h3>أنا كويسة، بس دايمًا أختار الشخص الغلط. ليه؟</h3>
+                    <div class="question-number">9</div>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="answer" id="answer9">
+                    <div class="solution-type">
+                        <h4><i class="fas fa-brain"></i> الحل النفسي</h4>
+                        <p>أحيانًا ننجذب دون وعي لأشخاص يشبهوا تجارب الطفولة (غياب، نقد، تجاهل).</p>
+                    </div>
+                    <div class="solution-type">
+                        <h4><i class="fas fa-tasks"></i> الحل السلوكي</h4>
+                        <p>1. راجع أول انطباع تاخده عن أي شخص: هل بتحس بحاجة لإثبات ذاتك؟ ولا إنك لازم "تستحق" حبه؟<br>
+                        2. خليك واعي لإشارات الراحة والاستقرار، مش بس الشغف أو التحدي.</p>
+                    </div>
+                    
+                    <div class="visit-section">
+                        <div class="visit-title">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>مواقع مقترحة</h4>
+                        </div>
+                        <div class="visit-links">
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-child"></i> تأثير الطفولة</h5>
+                                <p>كيف تؤثر طفولتك على اختياراتك العاطفية</p>
+                                <span class="link-btn">تعرف أكثر</span>
+                            </a>
+                            <a href="#" class="visit-link">
+                                <h5><i class="fas fa-heart"></i> دليل الاختيار الصحيح</h5>
+                                <p>كيف تختار الشريك المناسب لك</p>
+                                <span class="link-btn">اقرأ الدليل</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p> انضم إلى مجتمعنا </p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 أسرار الحب - كل الحقوق محفوظة</p>
+                <p>صمم بكل حب من أجل علاقات أكثر سعادة</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Search functionality with automatic search
+        const searchInput = document.getElementById('searchInput');
+        const questionBoxes = document.querySelectorAll('.question-box');
+        
+        // Search function
+        function searchQuestions() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            questionBoxes.forEach((box, index) => {
+                const questionText = box.querySelector('.question-header h3').textContent.toLowerCase();
+                const answerText = box.querySelector('.answer').textContent.toLowerCase();
+                
+                if (searchTerm === '' || questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                    box.style.display = 'block';
+                    
+                    // Auto-open if search term matches
+                    if (searchTerm !== '' && (questionText.includes(searchTerm) || answerText.includes(searchTerm))) {
+                        const answerId = index + 1;
+                        const answer = document.getElementById(`answer${answerId}`);
+                        if (!answer.classList.contains('show')) {
+                            answer.classList.add('show');
+                            const icon = box.querySelector('.toggle-icon i');
+                            icon.classList.remove('fa-chevron-down');
+                            icon.classList.add('fa-chevron-up');
+                        }
+                    }
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        }
+        
+        // Automatic search on typing with debounce
+        let searchTimeout;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(searchQuestions, 300);
+        });
+        
+        // Toggle answers
+        function toggleAnswer(id) {
+            const answer = document.getElementById(`answer${id}`);
+            answer.classList.toggle('show');
+            
+            const icon = event.currentTarget.querySelector('.toggle-icon i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+        
+        // Create more floating elements
+        function createFloatingElements() {
+            const container = document.body;
+            const elements = ['heart', 'heart', 'star', 'heart', 'gem', 'heart'];
+            
+            elements.forEach((el, index) => {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.innerHTML = `<i class="fas fa-${el}"></i>`;
+                
+                // Random position and animation
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.top = `${Math.random() * 100}%`;
+                element.style.fontSize = `${Math.random() * 20 + 15}px`;
+                element.style.animationDuration = `${Math.random() * 15 + 15}s`;
+                element.style.animationDelay = `${Math.random() * 10}s`;
+                
+                container.appendChild(element);
+            });
+        }
+        
+        // Initialize
+        window.onload = function() {
+            createFloatingElements();
+        }
+    </script>
 </body>
 </html>
