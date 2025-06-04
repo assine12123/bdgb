@@ -16,19 +16,19 @@
         }
         
         :root {
-            --primary: #ff6b8b;
-            --primary-light: #ffd6de;
-            --primary-dark: #e8436d;
-            --secondary: #ffb8c6;
-            --accent: #ff8fab;
-            --text: #5a3a4a;
-            --light-bg: #fff5f7;
+            --primary: #e74c3c;
+            --primary-light: #fadbd8;
+            --primary-dark: #c0392b;
+            --secondary: #f5b7b1;
+            --accent: #e74c3c;
+            --text: #2c3e50;
+            --light-bg: #ffffff;
             --card-bg: #ffffff;
-            --shadow: rgba(255, 107, 139, 0.2);
+            --shadow: rgba(231, 76, 60, 0.2);
         }
         
         body {
-            background: linear-gradient(135deg, #fff5f7 0%, #ffecef 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
             color: var(--text);
             line-height: 1.8;
             min-height: 100vh;
@@ -44,7 +44,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="rgba(255,107,139,0.05)" stroke-width="2"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="rgba(231,76,60,0.05)" stroke-width="2"/></svg>');
             background-size: 150px 150px;
             z-index: -1;
             opacity: 0.3;
@@ -64,8 +64,8 @@
             position: relative;
             overflow: hidden;
             border-radius: 25px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            box-shadow: 0 10px 30px rgba(255, 107, 139, 0.3);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
@@ -167,20 +167,20 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(255, 107, 139, 0.3);
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
         }
         
         .search-box button:hover {
             transform: scale(1.05) rotate(5deg);
             background: var(--primary-dark);
-            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
         }
         
         /* Buttons */
         .btn {
             display: inline-block;
             padding: 12px 25px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             border-radius: 50px;
             font-size: 1rem;
@@ -189,14 +189,14 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
             position: relative;
             overflow: hidden;
         }
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.4);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
         }
         
         .btn::before {
@@ -223,7 +223,7 @@
             overflow: hidden;
             transition: all 0.4s ease;
             box-shadow: 0 8px 25px var(--shadow);
-            border: 1px solid #ffd6de;
+            border: 1px solid var(--primary-light);
             position: relative;
         }
         
@@ -248,7 +248,7 @@
         }
         
         .question-header:hover {
-            background: #fff9fb;
+            background: #fff9f9;
         }
         
         .question-header h3 {
@@ -273,7 +273,7 @@
             margin-left: 10px;
             flex-shrink: 0;
             font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(255, 107, 139, 0.3);
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
         }
         
         .toggle-icon {
@@ -341,7 +341,7 @@
         
         /* Visit Section */
         .visit-section {
-            background: linear-gradient(135deg, #fff9fb 0%, #fff0f3 100%);
+            background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
             border-radius: 20px;
             padding: 20px;
             margin-top: 25px;
@@ -354,7 +354,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
-            color: var(--accent);
+            color: var(--primary);
             font-size: 1.3rem;
             position: relative;
             z-index: 1;
@@ -380,7 +380,7 @@
             text-decoration: none;
             color: var(--text);
             transition: all 0.3s ease;
-            border: 1px solid #ffd6de;
+            border: 1px solid var(--primary-light);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
             display: flex;
             flex-direction: column;
@@ -388,12 +388,12 @@
         
         .visit-link:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 143, 171, 0.15);
-            border-color: #ffb8c6;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.15);
+            border-color: var(--secondary);
         }
         
         .visit-link h5 {
-            color: var(--accent);
+            color: var(--primary);
             font-size: 1.15rem;
             margin-bottom: 10px;
             display: flex;
@@ -468,17 +468,17 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             font-size: 1.2rem;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(255, 107, 139, 0.3);
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
         }
         
         .social-links a:hover {
             transform: translateY(-5px) rotate(5deg);
-            box-shadow: 0 8px 15px rgba(255, 107, 139, 0.4);
+            box-shadow: 0 8px 15px rgba(231, 76, 60, 0.4);
         }
         
         /* Animations */
@@ -499,7 +499,7 @@
         .floating-element {
             position: fixed;
             z-index: -1;
-            color: rgba(255, 107, 139, 0.15);
+            color: rgba(231, 76, 60, 0.15);
             font-size: 24px;
             animation: float 18s infinite linear;
         }
@@ -544,7 +544,7 @@
                     </div>
                     <h1>العلاقات الناجحة</h1>
                 </div>
-                <p class="subtitle">دليلك  لعلاقات أكثر عمقاً وسعادة </p>
+                <p class="subtitle">دليلك لعلاقات أكثر عمقاً وسعادة </p>
                 
                 <!-- Search Box -->
                 <div class="search-container">
@@ -939,7 +939,7 @@
             </div>
             
             <div class="copyright">
-                <p>© 2025 أسرار الحب - كل الحقوق محفوظة</p>
+                <p>© 2023 أسرار الحب - كل الحقوق محفوظة</p>
                 <p>صمم بكل حب من أجل علاقات أكثر سعادة</p>
             </div>
         </div>
